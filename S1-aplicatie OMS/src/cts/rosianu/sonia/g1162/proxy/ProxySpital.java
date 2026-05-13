@@ -18,7 +18,7 @@ public class ProxySpital implements ISpital {
     public void permiteAcces(Vizitator vizitator) {
         if(!vizitator.isAreScrisoareAcceptare()){
 
-            System.out.println("Vizitatorul " + vizitator.getNume() + "nu are scrisoare de acceptare." );
+            System.out.println("Vizitatorul " + vizitator.getNume() + " nu are scrisoare de acceptare." );
 
             return;
 
