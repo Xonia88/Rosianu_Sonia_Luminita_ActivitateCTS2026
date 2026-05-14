@@ -1,5 +1,6 @@
 package cts.rosianu.sonia.g1162.main;
 
+import cts.rosianu.sonia.g1162.chain.*;
 import cts.rosianu.sonia.g1162.strategy.*;
 
 import java.util.ArrayList;
@@ -30,6 +31,52 @@ public class Main {
 
 
 
-        System.out.println("Chain of responsability");
+        System.out.println("\nChain of responsability\n");
+
+        PaginaWeb pagina = new PaginaWeb("Pagina eMag");
+
+        pagina.adaugaItem(
+                new ElementPagina(
+                        "paragraf",
+                        "Reduceri de vara"));
+
+        pagina.adaugaItem(
+                new ElementPagina(
+                        "imagine",
+                        "banner.png"));
+
+        pagina.adaugaItem(
+                new ElementPagina(
+                        "paragraf",
+                        "Laptop gaming"));
+
+        pagina.adaugaItem(
+                new ElementPagina(
+                        "imagine",
+                        "telefon.jpg"));
+
+        System.out.println(
+                " PAGINA INITIALA ");
+
+        pagina.afisarePagina();
+
+
+        Filtru filtruImagini =
+                new FiltruEliminareImagini();
+
+        Filtru filtruText =
+                new FiltruTextNegru();
+
+        filtruImagini.setUrmatorulFiltru(
+                filtruText);
+
+
+
+        filtruImagini.proceseaza(pagina);
+
+        System.out.println(
+                "\n PAGINA FILTRATA ");
+
+        pagina.afisarePagina();
     }
 }
